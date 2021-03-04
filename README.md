@@ -1,2 +1,2 @@
 # ChatApp
-Uikit chat app , based on firebase.
+This is realtime chat app based on firebase.
