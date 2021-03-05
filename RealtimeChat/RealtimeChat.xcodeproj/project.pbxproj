@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		9881036925F16CE30074A20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036825F16CE30074A20D /* AppDelegate.swift */; };
 		9881036B25F16CE30074A20D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036A25F16CE30074A20D /* SceneDelegate.swift */; };
-		9881036D25F16CE30074A20D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036C25F16CE30074A20D /* ViewController.swift */; };
+		9881036D25F16CE30074A20D /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036C25F16CE30074A20D /* SignInVC.swift */; };
 		9881037025F16CE30074A20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9881036E25F16CE30074A20D /* Main.storyboard */; };
 		9881037225F16CE40074A20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9881037125F16CE40074A20D /* Assets.xcassets */; };
 		9881037525F16CE40074A20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9881037325F16CE40074A20D /* LaunchScreen.storyboard */; };
+		9881038625F287EC0074A20D /* UtilsGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881038525F287EC0074A20D /* UtilsGeneral.swift */; };
+		9881038B25F288710074A20D /* UIColor_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881038A25F288710074A20D /* UIColor_Swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9881036525F16CE30074A20D /* RealtimeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9881036825F16CE30074A20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9881036A25F16CE30074A20D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9881036C25F16CE30074A20D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9881036C25F16CE30074A20D /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9881036F25F16CE30074A20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9881037125F16CE40074A20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9881037425F16CE40074A20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9881037625F16CE40074A20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9881038525F287EC0074A20D /* UtilsGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsGeneral.swift; sourceTree = "<group>"; };
+		9881038A25F288710074A20D /* UIColor_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,55 @@
 			children = (
 				9881036825F16CE30074A20D /* AppDelegate.swift */,
 				9881036A25F16CE30074A20D /* SceneDelegate.swift */,
-				9881036C25F16CE30074A20D /* ViewController.swift */,
-				9881036E25F16CE30074A20D /* Main.storyboard */,
+				9881038225F287790074A20D /* Controllers */,
+				9881038125F287620074A20D /* Models */,
+				9881038425F2879A0074A20D /* Views */,
+				9881037F25F287000074A20D /* Resources */,
 				9881037125F16CE40074A20D /* Assets.xcassets */,
-				9881037325F16CE40074A20D /* LaunchScreen.storyboard */,
 				9881037625F16CE40074A20D /* Info.plist */,
 			);
 			path = RealtimeChat;
+			sourceTree = "<group>";
+		};
+		9881037F25F287000074A20D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9881036E25F16CE30074A20D /* Main.storyboard */,
+				9881037325F16CE40074A20D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9881038125F287620074A20D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9881038925F2881E0074A20D /* Utils */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9881038225F287790074A20D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9881036C25F16CE30074A20D /* SignInVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9881038425F2879A0074A20D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9881038925F2881E0074A20D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9881038525F287EC0074A20D /* UtilsGeneral.swift */,
+				9881038A25F288710074A20D /* UIColor_Swift.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9881036D25F16CE30074A20D /* ViewController.swift in Sources */,
+				9881038625F287EC0074A20D /* UtilsGeneral.swift in Sources */,
+				9881038B25F288710074A20D /* UIColor_Swift.swift in Sources */,
+				9881036D25F16CE30074A20D /* SignInVC.swift in Sources */,
 				9881036925F16CE30074A20D /* AppDelegate.swift in Sources */,
 				9881036B25F16CE30074A20D /* SceneDelegate.swift in Sources */,
 			);
