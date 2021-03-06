@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		980ED92A25F2A6CF0067FF20 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980ED92925F2A6CF0067FF20 /* DefaultButton.swift */; };
+		980ED93125F358470067FF20 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980ED93025F358470067FF20 /* SignUpVC.swift */; };
+		9841A62825F37FD70033DC2A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841A62725F37FD70033DC2A /* ChatVC.swift */; };
 		9881036925F16CE30074A20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036825F16CE30074A20D /* AppDelegate.swift */; };
 		9881036B25F16CE30074A20D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036A25F16CE30074A20D /* SceneDelegate.swift */; };
 		9881036D25F16CE30074A20D /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881036C25F16CE30074A20D /* SignInVC.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		980ED92925F2A6CF0067FF20 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		980ED93025F358470067FF20 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpVC.swift; path = RealtimeChat/Resources/SignUpVC.swift; sourceTree = SOURCE_ROOT; };
+		9841A62725F37FD70033DC2A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9881036525F16CE30074A20D /* RealtimeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9881036825F16CE30074A20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9881036A25F16CE30074A20D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 		9881038225F287790074A20D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				980ED93025F358470067FF20 /* SignUpVC.swift */,
 				9881036C25F16CE30074A20D /* SignInVC.swift */,
+				9841A62725F37FD70033DC2A /* ChatVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9841A62825F37FD70033DC2A /* ChatVC.swift in Sources */,
+				980ED93125F358470067FF20 /* SignUpVC.swift in Sources */,
 				9881038625F287EC0074A20D /* UtilsGeneral.swift in Sources */,
 				980ED92A25F2A6CF0067FF20 /* DefaultButton.swift in Sources */,
 				9881038B25F288710074A20D /* UIColor_Swift.swift in Sources */,

@@ -9,13 +9,13 @@ import UIKit
 
 class SignInVC: UIViewController {
     // MARK: IBOutlets
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var forgotPasswordBTN: UIButton!
-    @IBOutlet weak var registerBTN: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var emailTF: UITextField!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var passwordTF: UITextField!
+    @IBOutlet private weak var forgotPasswordBTN: UIButton!
+    @IBOutlet private weak var registerBTN: UIButton!
     
 
     override func viewDidLoad() {
@@ -24,6 +24,9 @@ class SignInVC: UIViewController {
     }
     
     private func setupUI() {
+
+        navigationController?.navigationBar.tintColor = UtilsGeneral.defaultColor
+        
         titleLabel.textColor = UtilsGeneral.defaultColor
         
         emailLabel.textColor = .systemGray3
@@ -33,6 +36,23 @@ class SignInVC: UIViewController {
         registerBTN.setTitleColor(UtilsGeneral.defaultColor, for: .normal)
         
     }
+    
+    
+    // MARK: IBActions
+    @IBAction private func signInTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_ChatVC) as? ChatVC else { return }
+
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction private func registerTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_SignUpVC) as? SignUpVC else { return }
+
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 
 
 }
