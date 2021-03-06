@@ -40,14 +40,16 @@ class SignInVC: UIViewController {
     
     // MARK: IBActions
     @IBAction private func signInTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_ChatVC) as? ChatVC else { return }
+        
+        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil) // main storyboard
+        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_ChatVC) as? ChatVC else { return } // view controller
 
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @IBAction private func registerTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_SignUpVC) as? SignUpVC else { return }
+        let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil) // main storyboard
+        guard let vc = storyboard.instantiateViewController(withIdentifier: UtilsGeneral.SBID_SignUpVC) as? SignUpVC else { return } // view controller
 
         navigationController?.pushViewController(vc, animated: true)
     }
