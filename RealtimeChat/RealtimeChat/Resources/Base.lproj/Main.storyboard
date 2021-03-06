@@ -175,10 +175,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k8W-cA-xuL">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Kur-JQ-Dsp">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Kur-JQ-Dsp">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kur-JQ-Dsp" id="qXZ-Jw-KVd">
@@ -187,23 +187,27 @@
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="1gs-9Q-1Mn" id="I09-Pt-OOR"/>
+                                                    <outlet property="delegate" destination="1gs-9Q-1Mn" id="frT-5M-giL"/>
+                                                </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-KP-Oz5">
-                                                <rect key="frame" x="0.0" y="714" width="414" height="60"/>
+                                                <rect key="frame" x="0.0" y="734" width="414" height="40"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-he-3Of">
-                                                        <rect key="frame" x="10" y="10" width="394" height="30"/>
+                                                        <rect key="frame" x="10" y="5" width="394" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="6Yd-he-3Of" secondAttribute="trailing" constant="10" id="EqD-XU-neu"/>
-                                                    <constraint firstItem="6Yd-he-3Of" firstAttribute="top" secondItem="aA0-KP-Oz5" secondAttribute="top" constant="10" id="HdQ-8p-DrO"/>
+                                                    <constraint firstItem="6Yd-he-3Of" firstAttribute="top" secondItem="aA0-KP-Oz5" secondAttribute="top" constant="5" id="HdQ-8p-DrO"/>
                                                     <constraint firstItem="6Yd-he-3Of" firstAttribute="leading" secondItem="aA0-KP-Oz5" secondAttribute="leading" constant="10" id="MCv-2b-yWq"/>
-                                                    <constraint firstAttribute="height" constant="60" id="e2v-3U-Wfw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="6Yd-he-3Of" secondAttribute="bottom" constant="20" id="ndp-y0-CVc"/>
+                                                    <constraint firstAttribute="height" constant="40" id="e2v-3U-Wfw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6Yd-he-3Of" secondAttribute="bottom" constant="5" id="ndp-y0-CVc"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -239,6 +243,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="soF-3K-YQF"/>
+                    <connections>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="BX9-MI-iVW" id="SPH-qZ-Si8"/>
+                        <outlet property="scrollView" destination="k8K-UJ-cIN" id="EvS-9G-P7g"/>
+                        <outlet property="tableView" destination="k8W-cA-xuL" id="Jus-Oq-zll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoP-bG-Ihe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
