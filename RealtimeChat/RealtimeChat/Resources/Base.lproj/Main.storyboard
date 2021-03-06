@@ -81,12 +81,15 @@
                                                     <constraint firstItem="W6u-UM-VaJ" firstAttribute="leading" secondItem="eJ2-QY-hPx" secondAttribute="leading" id="sjg-xy-MYd"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-XW-lY1">
-                                                <rect key="frame" x="183.5" y="587.5" width="47" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-XW-lY1" customClass="DefaultButton" customModule="RealtimeChat" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="587.5" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MOR-QQ-ivt"/>
+                                                </constraints>
                                                 <state key="normal" title="Sign In"/>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-4m-R8Z">
-                                                <rect key="frame" x="72" y="627.5" width="270" height="30"/>
+                                                <rect key="frame" x="72" y="637.5" width="270" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7W-Y2-f69">
                                                         <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
@@ -104,7 +107,9 @@
                                             <constraint firstAttribute="trailing" secondItem="eJ2-QY-hPx" secondAttribute="trailing" constant="20" id="4XU-Xt-uaa"/>
                                             <constraint firstItem="eJ2-QY-hPx" firstAttribute="top" secondItem="ZSQ-rk-HLT" secondAttribute="bottom" constant="60" id="8Vw-dd-ipK"/>
                                             <constraint firstItem="ZSQ-rk-HLT" firstAttribute="leading" secondItem="bAu-aF-tum" secondAttribute="leading" constant="20" id="C7g-PP-NSp"/>
+                                            <constraint firstAttribute="trailing" secondItem="cd3-XW-lY1" secondAttribute="trailing" constant="20" id="Cne-Bd-qm0"/>
                                             <constraint firstItem="WHq-4m-R8Z" firstAttribute="centerX" secondItem="cd3-XW-lY1" secondAttribute="centerX" id="Fnb-dI-8IM"/>
+                                            <constraint firstItem="cd3-XW-lY1" firstAttribute="leading" secondItem="bAu-aF-tum" secondAttribute="leading" constant="20" id="eh1-iT-lA5"/>
                                             <constraint firstItem="eJ2-QY-hPx" firstAttribute="centerY" secondItem="bAu-aF-tum" secondAttribute="centerY" id="huV-dd-j5e"/>
                                             <constraint firstItem="eJ2-QY-hPx" firstAttribute="leading" secondItem="bAu-aF-tum" secondAttribute="leading" constant="20" id="ru7-lR-h5h"/>
                                             <constraint firstItem="WHq-4m-R8Z" firstAttribute="top" secondItem="cd3-XW-lY1" secondAttribute="bottom" constant="10" id="s2E-AY-cVm"/>
@@ -132,6 +137,15 @@
                             <constraint firstAttribute="bottom" secondItem="M0b-2Q-d3Q" secondAttribute="bottom" id="pbn-w3-CLa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="xCO-I2-PNy" id="TgS-WZ-N7e"/>
+                        <outlet property="emailTF" destination="QAv-jP-ZJI" id="IhS-V0-6gK"/>
+                        <outlet property="forgotPasswordBTN" destination="Y7W-Y2-f69" id="D8u-9t-X3p"/>
+                        <outlet property="passwordLabel" destination="yNs-ni-46Y" id="yo0-9b-Elf"/>
+                        <outlet property="passwordTF" destination="lST-W2-KaY" id="07i-dz-0Ob"/>
+                        <outlet property="registerBTN" destination="JFP-AH-OXQ" id="UkO-I7-Rc1"/>
+                        <outlet property="titleLabel" destination="ZSQ-rk-HLT" id="SVQ-rL-tCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

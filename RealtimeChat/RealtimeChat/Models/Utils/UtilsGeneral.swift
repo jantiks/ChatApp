@@ -9,4 +9,5 @@ import UIKit
 
 class UtilsGeneral: NSObject {
     public static let defaultColor = UIColor.appDefault
+    public static let defaultTextColor = UIColor.appWhite
 }
