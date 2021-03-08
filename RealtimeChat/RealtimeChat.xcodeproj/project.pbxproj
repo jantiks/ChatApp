@@ -18,6 +18,7 @@
 		9881037525F16CE40074A20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9881037325F16CE40074A20D /* LaunchScreen.storyboard */; };
 		9881038625F287EC0074A20D /* UtilsGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881038525F287EC0074A20D /* UtilsGeneral.swift */; };
 		9881038B25F288710074A20D /* UIColor_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881038A25F288710074A20D /* UIColor_Swift.swift */; };
+		98BA0C1825F40F820037ABA1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA0C1725F40F820037ABA1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9881037625F16CE40074A20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9881038525F287EC0074A20D /* UtilsGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsGeneral.swift; sourceTree = "<group>"; };
 		9881038A25F288710074A20D /* UIColor_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Swift.swift; sourceTree = "<group>"; };
+		98BA0C1725F40F820037ABA1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9881038925F2881E0074A20D /* Utils */,
+				98BA0C1A25F40F8A0037ABA1 /* Extensions */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +123,14 @@
 				9881038A25F288710074A20D /* UIColor_Swift.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		98BA0C1A25F40F8A0037ABA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98BA0C1725F40F820037ABA1 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9841A62825F37FD70033DC2A /* ChatVC.swift in Sources */,
+				98BA0C1825F40F820037ABA1 /* Extensions.swift in Sources */,
 				980ED93125F358470067FF20 /* SignUpVC.swift in Sources */,
 				9881038625F287EC0074A20D /* UtilsGeneral.swift in Sources */,
 				980ED92A25F2A6CF0067FF20 /* DefaultButton.swift in Sources */,

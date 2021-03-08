@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
     // MARK: IBOutlets
     @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var textView: UIView!
     
     private var lastContentOffset: CGFloat = 0
 
@@ -21,16 +22,20 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         // adding observer for keyaboard
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
+        self.addKeyboardListeners()
         self.hideKeyboardWhenTappedAround()
         
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if ((touch.view?.isDescendant(of: view)) != nil) {
+            return false
+        }
+        return true
     }
     
     //MARK: UITableViewDataSource methods
@@ -40,6 +45,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { fatalError("coudldn't load tableview cell") }
+        cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
     
@@ -59,22 +65,46 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     //MARK: Keyboard Notifications
-    @objc private func keyboardNotification(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+    func addKeyboardListeners() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        if let keyboardFrame: NSValue = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height // keyboard height
+            // changing the bottom constant of scrollview , so the textfield would be stick with keyboard
+            keyboardHeightLayoutConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom
+            
+            // animating the textfield when keyboard shows up
+            let duration:TimeInterval = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            
+            UIView.animate(
+                withDuration: duration,
+                delay: TimeInterval(0),
+                options: animationCurve,
+                animations: { self.view.layoutIfNeeded() },
+                completion: nil)
+            
+                
+            }
+        }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        keyboardHeightLayoutConstraint.constant = 0
         
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let endFrameY = endFrame?.origin.y ?? 0
-        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        // animating the textfield when keyboard hides
+        let duration:TimeInterval = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
         let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
         let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
-        
-        if endFrameY >= UIScreen.main.bounds.size.height {
-            self.keyboardHeightLayoutConstraint?.constant = 0.0
-        } else {
-            self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
-        }
         
         UIView.animate(
             withDuration: duration,
@@ -82,17 +112,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             options: animationCurve,
             animations: { self.view.layoutIfNeeded() },
             completion: nil)
-    }
-
-}
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        
+            
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
 }

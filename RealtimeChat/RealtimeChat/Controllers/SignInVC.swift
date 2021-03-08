@@ -21,6 +21,8 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     private func setupUI() {
@@ -39,6 +41,7 @@ class SignInVC: UIViewController {
     
     
     // MARK: IBActions
+    
     @IBAction private func signInTapped(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: UtilsGeneral.NEW_STORYBOARD_NAME, bundle: nil) // main storyboard
